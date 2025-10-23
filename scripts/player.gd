@@ -3,6 +3,8 @@ class_name Player extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @export_enum("yürüme", "yürüme_2") var anim_yurume: String
 
+@export var inventory: Inventory
+
 const SPEED = 100.0
 var input_direction
 
@@ -16,12 +18,11 @@ func move_char():
 	else: animation.play("bekleme")
 
 	
-	
 func _physics_process(_delta):
 	move_char()
 	move_and_slide()
 	
 
-# Pickup Coin
+# Pickup collectably
 
 	

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://oq4168kjui0m"]
+
+[ext_resource type="Script" uid="uid://bmayama4pyhck" path="res://scripts/collectable.gd" id="1_llfh3"]
+[ext_resource type="Texture2D" uid="uid://dkf3l5ecuic4k" path="res://assets/sprites/kalp1.png" id="1_ti8a4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llfh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ti8a4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnya4"]
+radius = 4.0
+
+[node name="collectable" type="Area2D"]
+z_index = 1
+script = ExtResource("1_llfh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_llfh3")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dnya4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

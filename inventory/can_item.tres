@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://c7jfefqqtwu0x"]
+
+[ext_resource type="Script" uid="uid://dojr2iye48trr" path="res://scripts/inventory_item.gd" id="1_uu16u"]
+[ext_resource type="Texture2D" uid="uid://dkf3l5ecuic4k" path="res://assets/sprites/kalp1.png" id="2_blr16"]
+
+[resource]
+script = ExtResource("1_uu16u")
+name = "Can"
+texture = ExtResource("2_blr16")
+metadata/_custom_type_script = "uid://dojr2iye48trr"

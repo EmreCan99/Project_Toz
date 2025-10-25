@@ -5,6 +5,7 @@ var GUI: CanvasLayer
 
 const scene_root = "res://scenes/"
 
+# for in game scene changes not from the main menu
 func change_scene(from, change_to):
 	var full_path = scene_root + change_to + ".tscn"
 	

@@ -8,6 +8,9 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 		inventory.close()
+		# return to main menu button
+		get_node("%btn_return_to_menu").pressed.connect(return_to_main_menu)
+
 
 func update_coin_lbl(score):
 	coins_lbl.text = str(score)
@@ -21,6 +24,8 @@ func _input(event):
 		else: 
 			inventory.open()
 
+func  return_to_main_menu():
+	get_tree().change_scene_to_file("res://scenes/menu_gui.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

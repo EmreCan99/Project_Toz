@@ -6,6 +6,8 @@ class_name BaseScene extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if SceneManager.player:
+		remove_child($player)
+		
 		add_child(SceneManager.player)
 		player = $player
 		set_player_position()
@@ -19,5 +21,5 @@ func set_player_position():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

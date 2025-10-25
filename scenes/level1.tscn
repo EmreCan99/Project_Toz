@@ -2163,6 +2163,24 @@ text = "0"
 [node name="inventoryGui" parent="GUI" instance=ExtResource("2_u3awl")]
 visible = false
 
+[node name="btn_return_to_menu" type="Button" parent="GUI"]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -17.0
+offset_right = 79.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.39589226, 0.39589226)
+theme_override_fonts/font = ExtResource("4_2ku1j")
+theme_override_font_sizes/font_size = 8
+text = "Ana Menüye dön"
+
 [node name="TileLayers" type="Node" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileLayers"]

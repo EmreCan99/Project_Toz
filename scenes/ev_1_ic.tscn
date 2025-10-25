@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://bwiptaoid72ew"]
 
 [ext_resource type="Texture2D" uid="uid://cukwx4lus6xu3" path="res://assets/sprites/Overworld.png" id="1_e28q8"]
-[ext_resource type="Script" uid="uid://bx1iuv12byx85" path="res://scenes/ev_1_ic.gd" id="1_fwsnq"]
+[ext_resource type="Script" uid="uid://bx1iuv12byx85" path="res://scripts/ev_1_ic.gd" id="1_fwsnq"]
 [ext_resource type="PackedScene" uid="uid://d0y4x4rc6vnue" path="res://scenes/scene_trigger.tscn" id="3_vt80j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xas31"]

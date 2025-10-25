@@ -1,12 +1,24 @@
 extends Node
 
 @onready var current_scene = get_tree().get_current_scene()
+@onready var stats = PlayerStats.new()
 
-@onready var GUI = current_scene.get_node("GUI")
-@onready var inventoryGUI = GUI.get_node("inventoryGui")
-@onready var total_coins = 0;
+# Check if the game started already
+@onready var in_game = false
+
+func _ready() -> void:
+	
+	# The Player Stats
+	stats.title = "The Hero"
+	stats.hp = 100
+	stats.coins = 0
+	
+	if in_game:
+		var GUI = current_scene.get_node("GUI")
+		var inventoryGUI = GUI.get_node("inventoryGui")
 
 signal inventory_changed
+
 
 # Pause the game upon the toggle inventory
 func _on_inventory_gui_opened():
@@ -17,8 +29,7 @@ func _on_inventory_gui_closed():
 	
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+
 
 func updateInventoryGUI():
 	inventory_changed.emit()

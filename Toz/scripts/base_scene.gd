@@ -7,6 +7,7 @@ class_name BaseScene extends Node2D
 func _ready() -> void:
 	if SceneManager.player:
 		remove_child($player)
+		print("player removed")
 		
 		add_child(SceneManager.player)
 		player = $player

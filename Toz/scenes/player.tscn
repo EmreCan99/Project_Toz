@@ -1,9 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://be8qbmt0fe144"]
+[gd_scene load_steps=26 format=3 uid="uid://be8qbmt0fe144"]
 
 [ext_resource type="Texture2D" uid="uid://dkqeyqwoslaps" path="res://assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Resource" uid="uid://8wb01chtlank" path="res://inventory/player_inventory.tres" id="2_dqkch"]
-[ext_resource type="Texture2D" uid="uid://tchqe4q8oj4a" path="res://assets/sprites/adam_yürü_ön.png" id="2_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -85,22 +84,6 @@ region = Rect2(192, 96, 32, 32)
 atlas = ExtResource("1_3vyb7")
 region = Rect2(224, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
-atlas = ExtResource("2_g2els")
-region = Rect2(0, 0, 460, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
-atlas = ExtResource("2_g2els")
-region = Rect2(460, 0, 460, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
-atlas = ExtResource("2_g2els")
-region = Rect2(1380, 0, 460, 460)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
-atlas = ExtResource("2_g2els")
-region = Rect2(920, 0, 460, 460)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
 animations = [{
 "frames": [{
@@ -172,26 +155,6 @@ animations = [{
 "loop": true,
 "name": &"yürüme",
 "speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i4ail")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a38lo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l71n6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ni07")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a38lo")
-}],
-"loop": true,
-"name": &"yürüme_2",
-"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
@@ -201,6 +164,7 @@ radius = 5.0
 collision_layer = 3
 collision_mask = 0
 script = ExtResource("1_qhqgy")
+anim_yurume = "yürüme"
 inventory = ExtResource("2_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -209,7 +173,6 @@ scale = Vector2(0.875, 0.8750003)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"bekleme"
 autoplay = "bekleme"
-frame_progress = 0.081688225
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
